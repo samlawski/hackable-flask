@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Checkout | Cookieshop{% endblock %}
+
+{% block body %}
+  <h1>Checkout</h1>
+
+  <form method="POST">
+    <h2>Your Order:</h2>
+    <label for="message">Write your order below:</label>
+    <textarea name="message" id="message" cols="30" rows="10">3x Chocolate chip ...</textarea>
+
+    <h2>Your Address:</h2>
+    <div>
+      <label for="name">Full Name</label>
+      <input type="text" name="name" id="name" placeholder="Jane Cookielover">
+    </div>
+    <div>
+      <label for="street">Street and Number:</label>
+      <input type="text" name="street" id="street" placeholder="Sample Street 24">
+    </div>
+    <div>
+      <label for="city">City:</label>
+      <input type="text" name="city" id="city" placeholder="Best Town">
+    </div>
+    <div>
+      <label for="zip">Zip:</label>
+      <input type="text" name="zip" id="zip" placeholder="12345">
+    </div>
+
+    <h2>Your Credit Card Details:</h2>
+    <div>
+      <label for="ccnumber">Credit Card Number:</label>
+      <input type="number" name="card-number" id="ccnumber" placeholder="4242424242424242">
+    </div>
+    <div>
+      <label for="ccexpire">Credit Card Expiration Date:</label>
+      <input type="text" name="card-expire" id="ccexpire" placeholder="08/23">
+    </div>
+    <div>
+      <label for="ccccv">Credit Card Expiration Date:</label>
+      <input type="number" name="card-ccv" id="ccccv" placeholder="123">
+    </div>
+
+    {% if success %}
+      <p style="color: green;">{{ success }}</p>
+    {% endif %}
+    {% if error %}
+      <p style="color: tomato;">{{ error }}</p>
+    {% endif %}
+
+    <input type="submit" value="Submit Order">
+  </form>
+{% endblock %}

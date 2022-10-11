@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Cookies | Cookieshop{% endblock %}
+
+{% block body %}
+  <h1>Cookies</h1>
+
+  <ul>
+    {% for cookie in cookies %}
+      <li>
+        <a href="/cookies/{{ cookie['id'] }}">{{ cookie['name'] }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
